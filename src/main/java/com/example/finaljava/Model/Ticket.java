@@ -41,6 +41,5 @@ public class Ticket {
     public String toString() {
         return "Ticket{ID=" + ticketId + ", Event='" + eventName + "', Rate=" + eventPrice + "}";
     }
-    ds
-    s
+
 }
