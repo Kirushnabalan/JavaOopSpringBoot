@@ -13,7 +13,7 @@ public class Main {
         int customerCount = 0;
         int customerTicketQuantity = 0;
         int customerRetrievalRate = 0;
-        Configuration config = new Configuration();
+
         // Input for maximum ticket capacity
         while (maximumTicketCapacity <= 0) {
             try {
@@ -42,24 +42,19 @@ public class Main {
             }
         }
 
-// Input for ticket count
+        // Input for ticket count
         while (ticketCount <= 0 || ticketCount > maximumTicketCapacity) {
             try {
                 System.out.print("  Enter the tickets each vendor will create (lower than Maximum Ticket Capacity): ");
                 ticketCount = getInput.nextInt();
-
-                // Validate the range in the same try block
                 if (ticketCount <= 0 || ticketCount > maximumTicketCapacity) {
-                    throw new IllegalArgumentException("Error: Ticket count must be a positive integer and lower than the Maximum Ticket Capacity.");
+                    System.out.println("Error: Ticket count must be a positive integer and lower than the Maximum Ticket Capacity.");
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Error: Please enter a valid integer.");
                 getInput.next(); // Clear invalid input
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage()); // Print specific range error message
             }
         }
-
 
         // Input for vendor retrieval rate
         while (vendorRetrievalRate <= 0) {
@@ -117,31 +112,6 @@ public class Main {
             }
         }
 
-        try {
-            // Initialize the TicketPool and participants
-            TicketPool ticketPool = new TicketPool(maximumTicketCapacity);
-            Vendor[] vendors = new Vendor[vendorCount];
-            Customer[] customers = new Customer[customerCount];
-
-            // Start vendor threads
-            for (int i = 0; i < vendors.length; i++) {
-                vendors[i] = new Vendor(ticketCount, vendorRetrievalRate, ticketPool);
-                Thread vendorThread = new Thread(vendors[i], "Vendor-" + i);
-                vendorThread.start();
-            }
-
-            // Start customer threads
-            for (int i = 0; i < customers.length; i++) {
-                customers[i] = new Customer(ticketPool,customerRetrievalRate, customerTicketQuantity);
-                Thread customerThread = new Thread(customers[i], "Customer-" + i);
-                customerThread.start();
-            }
-        } catch (Exception e) {
-            System.out.println("An unexpected error occurred: " + e.getMessage());
-        } finally {
-            getInput.close();
-        }
-
         String jsonData = String.format("""
             {
               "maximumTicketCapacity": %d,
@@ -157,9 +127,49 @@ public class Main {
                 customerCount, customerTicketQuantity, customerRetrievalRate
         );
 
+        Configuration config=new Configuration();
         // Save configuration
         config.saveConfiguration(jsonData);
         String loadedJson = config.loadConfiguration();
+        try {
+            // Initialize the TicketPool and participants
+            TicketPool ticketPool = new TicketPool(maximumTicketCapacity);
+            Vendor[] vendors = new Vendor[vendorCount];
+            Customer[] customers = new Customer[customerCount];
+            Thread[] vendorThreads = new Thread[vendorCount];
+            Thread[] customerThreads = new Thread[customerCount];
 
+            // Start vendor threads
+            for (int i = 0; i < vendors.length; i++) {
+                vendors[i] = new Vendor(ticketCount, vendorRetrievalRate, ticketPool);
+                vendorThreads[i] = new Thread(vendors[i], "Vendor-" + i);
+                vendorThreads[i].start();
+            }
+
+            // Start customer threads
+            for (int i = 0; i < customers.length; i++) {
+                customers[i] = new Customer(ticketPool, customerRetrievalRate, customerTicketQuantity);
+                customerThreads[i] = new Thread(customers[i], "Customer-" + i);
+                customerThreads[i].start();
+            }
+
+            // Wait for all vendor threads to complete
+            for (Thread vendorThread : vendorThreads) {
+                vendorThread.join();
+            }
+
+            // Wait for all customer threads to complete
+            for (Thread customerThread : customerThreads) {
+                customerThread.join();
+            }
+
+            // Print message after all threads complete
+            System.out.println("All customers have bought tickets.");
+
+        } catch (Exception e) {
+            System.out.println("An unexpected error occurred: " + e.getMessage());
+        } finally {
+            getInput.close();
+        }
     }
 }

@@ -1,0 +1,20 @@
+{
+  "maximumTicketCapacity": 1,
+  "vendorCount": 1,
+  "ticketCount": 1,
+  "vendorRetrievalRate": 1,
+  "customerCount": 1,
+  "customerTicketQuantity": 1,
+  "customerRetrievalRate": 1
+}
+
+{
+  "maximumTicketCapacity": 1,
+  "vendorCount": 1,
+  "ticketCount": 1,
+  "vendorRetrievalRate": 1,
+  "customerCount": 1,
+  "customerTicketQuantity": 1,
+  "customerRetrievalRate": 1
+}
+
