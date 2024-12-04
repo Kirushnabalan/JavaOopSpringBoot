@@ -17,12 +17,13 @@ public class TicketPool {
             try {
                 wait();
             } catch (InterruptedException e) {
-                e.printStackTrace();
-                return;
+                Thread.currentThread().interrupt(); // Preserve the interruption status.
+                System.out.println("Thread interrupted during createTicket");
+                return; // Exit to avoid inconsistent state.
             }
         }
         ticketQueue.add(ticket);
-        notifyAll();
+        notifyAll(); // Notify waiting threads that a new ticket is available.
     }
 
     public synchronized Ticket getTicket() {
@@ -30,12 +31,13 @@ public class TicketPool {
             try {
                 wait();
             } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                return null;
+                Thread.currentThread().interrupt(); // Preserve the interruption status.
+                System.out.println("Thread interrupted during getTicket");
+                return null; // Exit gracefully.
             }
         }
         Ticket ticket = ticketQueue.poll();
-        notifyAll();
+        notifyAll(); // Notify threads that a space is available in the queue.
         return ticket;
     }
 }

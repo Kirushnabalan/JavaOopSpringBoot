@@ -9,6 +9,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/simulation")
+@CrossOrigin
 public class Controller {
 
     @Autowired
