@@ -1,8 +1,13 @@
 package com.example.finaljava.Model;
 
+
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Represents a ticket pool for managing tickets with a fixed capacity.
+ * Supports thread-safe ticket creation and retrieval.
+ */
 public class TicketPool {
     private final Queue<Ticket> ticketQueue;
     private final int capacity;
@@ -17,13 +22,13 @@ public class TicketPool {
             try {
                 wait();
             } catch (InterruptedException e) {
-                Thread.currentThread().interrupt(); // Preserve the interruption status.
-                System.out.println("Thread interrupted during createTicket");
-                return; // Exit to avoid inconsistent state.
+                Thread.currentThread().interrupt();
+                return;
             }
         }
+        Logger.info("Creating new ticket");
         ticketQueue.add(ticket);
-        notifyAll(); // Notify waiting threads that a new ticket is available.
+        notifyAll();
     }
 
     public synchronized Ticket getTicket() {
@@ -31,13 +36,15 @@ public class TicketPool {
             try {
                 wait();
             } catch (InterruptedException e) {
-                Thread.currentThread().interrupt(); // Preserve the interruption status.
-                System.out.println("Thread interrupted during getTicket");
-                return null; // Exit gracefully.
+                Thread.currentThread().interrupt();
+                return null;
             }
         }
         Ticket ticket = ticketQueue.poll();
-        notifyAll(); // Notify threads that a space is available in the queue.
+        Logger.info("Returning ticket");
+        notifyAll();
         return ticket;
     }
+
+
 }

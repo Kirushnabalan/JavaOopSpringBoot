@@ -1,0 +1,9 @@
+{
+  "maximumTicketCapacity": 10,
+  "vendorCount": 5,
+  "ticketCount": 4,
+  "vendorRetrievalRate": 2,
+  "customerCount": 3,
+  "customerTicketQuantity": 1,
+  "customerRetrievalRate": 2
+}

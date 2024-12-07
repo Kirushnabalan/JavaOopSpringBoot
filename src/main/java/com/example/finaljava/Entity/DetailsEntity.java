@@ -1,4 +1,4 @@
-package com.example.finaljava.Model;
+package com.example.finaljava.Entity;
 
 import jakarta.persistence.*;
 

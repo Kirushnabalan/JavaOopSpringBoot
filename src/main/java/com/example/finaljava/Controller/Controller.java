@@ -1,6 +1,6 @@
 package com.example.finaljava.Controller;
 
-import com.example.finaljava.Model.DetailsEntity;
+import com.example.finaljava.Entity.DetailsEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +20,7 @@ public class Controller {
         simulationService.startSimulation(config);
         return "Simulation started!";
     }
+
     @PostMapping("/save")
     public String saveConfiguration(@RequestBody DetailsEntity config) {
         simulationService.saveConfiguration(config);

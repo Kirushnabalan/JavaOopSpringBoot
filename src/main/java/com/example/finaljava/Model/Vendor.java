@@ -1,34 +1,37 @@
 package com.example.finaljava.Model;
 
+import com.example.finaljava.LogsFileforThredSave.LogsSave;
+
 import java.math.BigDecimal;
 
 public class Vendor implements Runnable {
-    private final int ticketsToRelease;
+    private final int ticketsToReleaseByVendor;
     private final int releaseRate;
     private final TicketPool ticketPool;
-
-    public Vendor(int ticketsToRelease, int releaseRate, TicketPool ticketPool) {
-        this.ticketsToRelease = ticketsToRelease;
+    public Vendor(int ticketsToReleaseByVendor, int releaseRate, TicketPool ticketPool) {
+        this.ticketsToReleaseByVendor = ticketsToReleaseByVendor;
         this.releaseRate = releaseRate;
         this.ticketPool = ticketPool;
     }
 
     @Override
     public void run() {
-        for (int i = 0; i < ticketsToRelease; i++) {
-            try {
-                // Create and release a ticket
+            for (int i = 0; i <ticketsToReleaseByVendor; i++) {
                 Ticket ticket = new Ticket(i, "Event-" + i, new BigDecimal(1000 + (i * 50)));
                 ticketPool.createTicket(ticket);
-                System.out.println(Thread.currentThread().getName() + " created " + ticket);
                 String event = Thread.currentThread().getName() + " created " + ticket;
                 LogsSave.log(event);
-                // Simulate delay between actions
-                Thread.sleep(releaseRate);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                break;
+
+                try {
+                    // Create and release a ticket
+                    // Simulate delay between actions
+                    Thread.sleep(releaseRate);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
+
         }
-    }
+
+
 }

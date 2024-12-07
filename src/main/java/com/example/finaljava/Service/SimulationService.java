@@ -1,5 +1,7 @@
 package com.example.finaljava.Service;
 
+import com.example.finaljava.Entity.DetailsEntity;
+import com.example.finaljava.LogsFileforThredSave.LogsSave;
 import com.example.finaljava.Model.*;
 import com.example.finaljava.Repository.TicketRepository; // Correct repository import
 import org.springframework.beans.factory.annotation.Autowired;

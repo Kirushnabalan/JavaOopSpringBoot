@@ -1,4 +1,4 @@
-package com.example.finaljava.Model;
+package com.example.finaljava.LogsFileforThredSave;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
