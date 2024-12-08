@@ -1,50 +1,56 @@
 package com.example.finaljava.Model;
 
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
-/**
- * Represents a ticket pool for managing tickets with a fixed capacity.
- * Supports thread-safe ticket creation and retrieval.
- */
 public class TicketPool {
-    private final Queue<Ticket> ticketQueue;
-    private final int capacity;
+    private final BlockingQueue<Ticket> tickets = new LinkedBlockingQueue<>(); // Use Ticket type in queue
+    private final int maxCapacity;
 
-    public TicketPool(int capacity) {
-        this.capacity = capacity;
-        this.ticketQueue = new LinkedList<>();
+    public TicketPool(int maxCapacity) {
+        this.maxCapacity = maxCapacity;
     }
 
-    public synchronized void createTicket(Ticket ticket) {
-        while (ticketQueue.size() >= capacity) {
+    // Add ticket to the pool
+    public synchronized void addTicket(Ticket ticket) {
+        while (tickets.size() >= maxCapacity) {
             try {
-                wait();
+                System.out.println("[TicketPool]: Pool is full, waiting to add tickets...");
+                wait(); // Wait for space to become available
             } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
+                Thread.currentThread().interrupt(); // Preserve interrupted status
+                System.out.println("[TicketPool]: Add ticket operation interrupted.");
                 return;
             }
         }
-        Logger.info("Creating new ticket");
-        ticketQueue.add(ticket);
-        notifyAll();
+        tickets.add(ticket); // Add the ticket to the pool
+        System.out.println("[TicketPool]: Created " + ticket);
+        notifyAll(); // Notify any threads waiting for a ticket
     }
 
+    // Get a ticket from the pool
     public synchronized Ticket getTicket() {
-        while (ticketQueue.isEmpty()) {
+        while (tickets.isEmpty()) {
             try {
-                wait();
+                System.out.println("[TicketPool]: Pool is empty, waiting for tickets...");
+                wait(); // Wait for a ticket to become available
             } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
+                Thread.currentThread().interrupt(); // Preserve interrupted status
+                System.out.println("[TicketPool]: Get ticket operation interrupted.");
                 return null;
             }
         }
-        Ticket ticket = ticketQueue.poll();
-        Logger.info("Returning ticket");
-        notifyAll();
+        Ticket ticket = tickets.poll(); // Retrieve and remove a ticket from the pool
+        System.out.println("[TicketPool]: Sold " + ticket);
+        notifyAll(); // Notify any threads waiting to add tickets
         return ticket;
     }
 
-
+    // Check if the pool has tickets
+    public boolean hasTickets() {
+        return !tickets.isEmpty(); // Check if the queue has tickets
+    }
+    public synchronized int getSize() {
+        return tickets.size();
+    }
 }

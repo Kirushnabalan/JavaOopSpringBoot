@@ -1,164 +1,143 @@
 package com.example.finaljava.Model;
 
+import com.google.gson.Gson;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    private static final String DEFAULT_FILE_PATH = "config.json"; // Default file path for saving configuration
+
     public static void main(String[] args) {
-        Scanner getInput = new Scanner(System.in);
-        boolean continueProgram = true;
+        Scanner scanner = new Scanner(System.in);
+        Configuration config = null;
 
-        while (continueProgram) {
-            int totalTickets = 0, ticketReleaseRate = 0, vendorCount = 0, customerCount = 0;
-            int customerRetrievalRate = 0, customerTicketQuantity = 0, maximumTicketCapacity = 0;
-
-            // Input for total tickets
-            while (totalTickets <= 0) {
-                try {
-                    System.out.print(">> Enter total number of tickets: ");
-                    totalTickets = getInput.nextInt();
-                    if (totalTickets <= 0) {
-                        System.out.println("Error: Total number of tickets must be a positive integer.");
-                    }
-                } catch (InputMismatchException e) {
-                    System.out.println("Error: Please enter a valid integer.");
-                    getInput.next(); // Clear invalid input
-                }
-            }
-
-            // Input for ticket release rate
-            while (ticketReleaseRate <= 0) {
-                try {
-                    System.out.print(">> Enter ticket release rate (seconds per ticket): ");
-                    ticketReleaseRate = getInput.nextInt();
-                    if (ticketReleaseRate <= 0) {
-                        System.out.println("Error: Ticket release rate must be a positive integer.");
-                    }
-                } catch (InputMismatchException e) {
-                    System.out.println("Error: Please enter a valid integer.");
-                    getInput.next(); // Clear invalid input
-                }
-            }
-
-            // Input for vendor count
-            while (vendorCount <= 0) {
-                try {
-                    System.out.print(">> Enter number of vendors: ");
-                    vendorCount = getInput.nextInt();
-                    if (vendorCount <= 0) {
-                        System.out.println("Error: Vendor count must be a positive integer.");
-                    }
-                } catch (InputMismatchException e) {
-                    System.out.println("Error: Please enter a valid integer.");
-                    getInput.next(); // Clear invalid input
-                }
-            }
-
-            // Input for customer count
-            while (customerCount <= 0) {
-                try {
-                    System.out.print(">> Enter number of customers: ");
-                    customerCount = getInput.nextInt();
-                    if (customerCount <= 0) {
-                        System.out.println("Error: Customer count must be a positive integer.");
-                    }
-                } catch (InputMismatchException e) {
-                    System.out.println("Error: Please enter a valid integer.");
-                    getInput.next(); // Clear invalid input
-                }
-            }
-
-            // Input for customer retrieval rate
-            while (customerRetrievalRate <= 0) {
-                try {
-                    System.out.print(">> Enter customer retrieval rate (seconds per ticket): ");
-                    customerRetrievalRate = getInput.nextInt();
-                    if (customerRetrievalRate <= 0) {
-                        System.out.println("Error: Customer retrieval rate must be a positive integer.");
-                    }
-                } catch (InputMismatchException e) {
-                    System.out.println("Error: Please enter a valid integer.");
-                    getInput.next(); // Clear invalid input
-                }
-            }
-
-            // Input for customer ticket quantity
-            while (customerTicketQuantity <= 0) {
-                try {
-                    System.out.print(">> Enter quantity of tickets each customer will buy: ");
-                    customerTicketQuantity = getInput.nextInt();
-                    if (customerTicketQuantity <= 0) {
-                        System.out.println("Error: Customer ticket quantity must be a positive integer.");
-                    }
-                } catch (InputMismatchException e) {
-                    System.out.println("Error: Please enter a valid integer.");
-                    getInput.next(); // Clear invalid input
-                }
-            }
-
-            // Input for maximum ticket capacity
-            while (maximumTicketCapacity <= 0) {
-                try {
-                    System.out.print(">> Enter maximum ticket capacity of the pool: ");
-                    maximumTicketCapacity = getInput.nextInt();
-                    if (maximumTicketCapacity <= 0) {
-                        System.out.println("Error: Maximum ticket capacity must be a positive integer.");
-                    }
-                } catch (InputMismatchException e) {
-                    System.out.println("Error: Please enter a valid integer.");
-                    getInput.next(); // Clear invalid input
-                }
-            }
-
-            // Start ticket system
+        while (true) {
             try {
-                TicketPool ticketPool = new TicketPool(maximumTicketCapacity);
-                Thread[] vendorThreads = new Thread[vendorCount];
-                Thread[] customerThreads = new Thread[customerCount];
+                System.out.println(">> Would you like to save the configuration to a file? (yes/no)");
+                String saveOption = readInput(scanner);
 
-                // Start vendor threads
-                for (int i = 0; i < vendorCount; i++) {
-                    Runnable vendor = new Vendor(totalTickets, ticketReleaseRate, ticketPool);
-                    vendorThreads[i] = new Thread(vendor, "Vendor-" + i);
-                    vendorThreads[i].start();
-                }
+                if ("yes".equalsIgnoreCase(saveOption)) {
+                    config = Configuration.collectFromInput(scanner);
 
-                // Start customer threads
-                for (int i = 0; i < customerCount; i++) {
-                    Runnable customer = new Customer(ticketPool, customerTicketQuantity, customerRetrievalRate);
-                    customerThreads[i] = new Thread(customer, "Customer-" + i);
-                    customerThreads[i].start();
-                }
-
-                System.out.println("All operations are completed.");
-
-            } catch (Exception e) {
-                System.out.println("An unexpected error occurred: " + e.getMessage());
-            }
-
-            // Ask the user if they want to restart or exit
-            System.out.print("Do you want to restart the system? (1: Restart, 2: Exit): ");
-            int choice = 0;
-            while (choice != 1 && choice != 2) {
-                try {
-                    choice = getInput.nextInt();
-                    if (choice == 1) {
-                        System.out.println("Restarting the system...");
-                    } else if (choice == 2) {
-                        System.out.println("Exiting the system...");
-                        continueProgram = false;
-                    } else {
-                        System.out.println("Invalid choice. Please enter 1 to restart or 2 to exit.");
+                    try {
+                        config.saveToJson(DEFAULT_FILE_PATH);
+                        System.out.println("Configuration saved to file: " + DEFAULT_FILE_PATH);
+                    } catch (Exception e) {
+                        System.out.println("Error saving configuration to file: " + e.getMessage());
                     }
-                } catch (InputMismatchException e) {
-                    System.out.println("Error: Please enter 1 or 2.");
-                    getInput.next(); // Clear invalid input
+                } else if ("no".equalsIgnoreCase(saveOption)) {
+                    config = Configuration.collectFromInput(scanner);
+                } else {
+                    System.out.println("Invalid input. Please enter 'yes' or 'no'.");
+                    continue;
                 }
+
+                while (true) {
+                    System.out.println(">> Enter an action: (start/restart/exit)");
+                    String action = readInput(scanner);
+
+                    switch (action.toLowerCase()) {
+                        case "start":
+                            System.out.println("Thread started. Type 'stop' to stop the threads and view the summary.");
+                            startThread(config, scanner);
+                            break;
+                        case "restart":
+                            System.out.println("Restarting configuration collection...");
+                            break;
+                        case "stop":
+                            stopThreads();
+                            displaySummary(config);
+                            break;
+                        case "exit":
+                            System.out.println("Exiting the program. Goodbye!");
+                            scanner.close();
+                            return;
+                        default:
+                            System.out.println("Invalid action. Please enter 'start', 'restart', 'stop', or 'exit'.");
+                            continue;
+                    }
+
+                    if ("restart".equalsIgnoreCase(action)) {
+                        break;
+                    }
+                }
+            } catch (Exception e) {
+                System.out.println("An error occurred: " + e.getMessage());
+                scanner.nextLine(); // Clear the scanner buffer in case of invalid input
+            }
+        }
+    }
+
+    // Add a list of threads to be stopped later
+    private static ArrayList<Thread> activeThreads = new ArrayList<>();
+
+    public static void startThread(Configuration config, Scanner scanner) {
+        TicketPool ticketPool = new TicketPool(config.getMaximumTicketCapacity());
+        Vendor[] vendors = new Vendor[config.getVendorCount()];
+        Customer[] customers = new Customer[config.getCustomerCount()];
+
+        // Initialize and start vendor threads
+        for (int i = 0; i < config.getVendorCount(); i++) {
+            vendors[i] = new Vendor(config.getTotalTickets(), config.getTicketReleaseRate(), ticketPool);
+            Thread vendorThread = new Thread(vendors[i]);
+            activeThreads.add(vendorThread);  // Add to active threads list
+            vendorThread.start();
+        }
+
+        // Initialize and start customer threads
+        for (int i = 0; i < config.getCustomerCount(); i++) {
+            customers[i] = new Customer(ticketPool, config.getCustomerTicketQuantity(), config.getCustomerRetrievalRate());
+            Thread customerThread = new Thread(customers[i]);
+            activeThreads.add(customerThread); // Add to active threads list
+            customerThread.start();
+        }
+
+        // Monitor for stop command while threads are running
+        while (true) {
+            String action = readInput(scanner);
+            if ("stop".equalsIgnoreCase(action)) {
+                stopThreads();
+                displaySummary(config);
+                break;
             }
         }
 
-        getInput.close();
+        // Wait for all threads to finish by calling join on each thread
+        for (Thread thread : activeThreads) {
+            try {
+                thread.join(); // This ensures the main thread waits for the worker threads to finish
+            } catch (InterruptedException e) {
+                e.printStackTrace(); // Handle interruption properly
+            }
+        }
+        System.out.println("All threads have completed execution.");
+    }
+
+    // Method to stop all threads
+    public static void stopThreads() {
+        // Set flag or interrupt threads to stop
+        for (Thread thread : activeThreads) {
+            thread.interrupt();
+        }
+
+        System.out.println("Threads have been stopped.");
+    }
+
+    private static void displaySummary(Configuration config) {
+        System.out.println("===== Configuration Summary =====");
+        System.out.println("Total Tickets: " + config.getTotalTickets());
+        System.out.println("Ticket Release Rate: " + config.getTicketReleaseRate() + " seconds per ticket");
+        System.out.println("Number of Vendors: " + config.getVendorCount());
+        System.out.println("Number of Customers: " + config.getCustomerCount());
+        System.out.println("Customer Retrieval Rate: " + config.getCustomerRetrievalRate() + " seconds per ticket");
+        System.out.println("Customer Ticket Quantity: " + config.getCustomerTicketQuantity());
+        System.out.println("Maximum Ticket Capacity: " + config.getMaximumTicketCapacity());
+    }
+
+    private static String readInput(Scanner scanner) {
+        while (!scanner.hasNextLine()) {
+            System.out.println("No input detected. Please try again.");
+        }
+        return scanner.nextLine().trim();
     }
 }

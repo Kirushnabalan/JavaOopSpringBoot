@@ -3,30 +3,30 @@ package com.example.finaljava.Entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "New")
+@Table(name = "Newone")
 public class DetailsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int ticketCapacity;
+    private int totalTickets;
+    private int ticketReleaseRate;
     private int vendorCount;
-    private int ticketsPerVendor;
-    private int vendorReleaseRate;
     private int customerCount;
-    private int customerReleaseRate;
-    private int customerBuyCount;
+    private int customerRetrievalRate;
+    private int customerTicketQuantity;
+    private int maximumTicketCapacity;
 
-    public DetailsEntity(Long id, int ticketCapacity,
-                         int vendorCount, int ticketsPerVendor, int vendorReleaseRate, int customerCount, int customerReleaseRate, int customerBuyCount) {
+    public DetailsEntity(Long id, int totalTickets, int ticketReleaseRate, int vendorCount,
+                         int customerCount, int customerRetrievalRate, int customerTicketQuantity, int maximumTicketCapacity) {
         this.id = id;
-        this.ticketCapacity = ticketCapacity;
+        this.totalTickets = totalTickets;
+        this.ticketReleaseRate = ticketReleaseRate;
         this.vendorCount = vendorCount;
-        this.ticketsPerVendor = ticketsPerVendor;
-        this.vendorReleaseRate = vendorReleaseRate;
         this.customerCount = customerCount;
-        this.customerReleaseRate = customerReleaseRate;
-        this.customerBuyCount = customerBuyCount;
+        this.customerRetrievalRate = customerRetrievalRate;
+        this.customerTicketQuantity = customerTicketQuantity;
+        this.maximumTicketCapacity = maximumTicketCapacity;
     }
 
     public DetailsEntity() {
@@ -36,13 +36,13 @@ public class DetailsEntity {
     public String toString() {
         return "DetailsEntity{" +
                 "id=" + id +
-                ", ticketCapacity=" + ticketCapacity +
+                ", totalTickets=" + totalTickets +
+                ", ticketReleaseRate=" + ticketReleaseRate +
                 ", vendorCount=" + vendorCount +
-                ", ticketsPerVendor=" + ticketsPerVendor +
-                ", vendorReleaseRate=" + vendorReleaseRate +
                 ", customerCount=" + customerCount +
-                ", customerReleaseRate=" + customerReleaseRate +
-                ", customerBuyCount=" + customerBuyCount +
+                ", customerRetrievalRate=" + customerRetrievalRate +
+                ", customerTicketQuantity=" + customerTicketQuantity +
+                ", maximumTicketCapacity=" + maximumTicketCapacity +
                 '}';
     }
 
@@ -54,12 +54,20 @@ public class DetailsEntity {
         this.id = id;
     }
 
-    public int getTicketCapacity() {
-        return ticketCapacity;
+    public int getTotalTickets() {
+        return totalTickets;
     }
 
-    public void setTicketCapacity(int ticketCapacity) {
-        this.ticketCapacity = ticketCapacity;
+    public void setTotalTickets(int totalTickets) {
+        this.totalTickets = totalTickets;
+    }
+
+    public int getTicketReleaseRate() {
+        return ticketReleaseRate;
+    }
+
+    public void setTicketReleaseRate(int ticketReleaseRate) {
+        this.ticketReleaseRate = ticketReleaseRate;
     }
 
     public int getVendorCount() {
@@ -70,22 +78,6 @@ public class DetailsEntity {
         this.vendorCount = vendorCount;
     }
 
-    public int getTicketsPerVendor() {
-        return ticketsPerVendor;
-    }
-
-    public void setTicketsPerVendor(int ticketsPerVendor) {
-        this.ticketsPerVendor = ticketsPerVendor;
-    }
-
-    public int getVendorReleaseRate() {
-        return vendorReleaseRate;
-    }
-
-    public void setVendorReleaseRate(int vendorReleaseRate) {
-        this.vendorReleaseRate = vendorReleaseRate;
-    }
-
     public int getCustomerCount() {
         return customerCount;
     }
@@ -94,19 +86,27 @@ public class DetailsEntity {
         this.customerCount = customerCount;
     }
 
-    public int getCustomerReleaseRate() {
-        return customerReleaseRate;
+    public int getCustomerRetrievalRate() {
+        return customerRetrievalRate;
     }
 
-    public void setCustomerReleaseRate(int customerReleaseRate) {
-        this.customerReleaseRate = customerReleaseRate;
+    public void setCustomerRetrievalRate(int customerRetrievalRate) {
+        this.customerRetrievalRate = customerRetrievalRate;
     }
 
-    public int getCustomerBuyCount() {
-        return customerBuyCount;
+    public int getCustomerTicketQuantity() {
+        return customerTicketQuantity;
     }
 
-    public void setCustomerBuyCount(int customerBuyCount) {
-        this.customerBuyCount = customerBuyCount;
+    public void setCustomerTicketQuantity(int customerTicketQuantity) {
+        this.customerTicketQuantity = customerTicketQuantity;
+    }
+
+    public int getMaximumTicketCapacity() {
+        return maximumTicketCapacity;
+    }
+
+    public void setMaximumTicketCapacity(int maximumTicketCapacity) {
+        this.maximumTicketCapacity = maximumTicketCapacity;
     }
 }

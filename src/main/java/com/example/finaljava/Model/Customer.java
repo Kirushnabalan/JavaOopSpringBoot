@@ -1,28 +1,32 @@
 package com.example.finaljava.Model;
 
-import com.example.finaljava.LogsFileforThredSave.LogsSave;
 public class Customer implements Runnable {
-    private final TicketPool ticketPool;
-    private final int buyCount;
-    private final int retrievalRate;
+    private TicketPool ticketPool;
+    private int customerBuyCount;
+    private int customerReleaseRate;
 
-    public Customer(TicketPool ticketPool, int buyCount, int retrievalRate) {
+    public Customer(TicketPool ticketPool, int customerBuyCount, int customerReleaseRate) {
         this.ticketPool = ticketPool;
-        this.buyCount = buyCount;
-        this.retrievalRate = retrievalRate;
+        this.customerBuyCount = customerBuyCount;
+        this.customerReleaseRate = customerReleaseRate;
     }
 
     @Override
     public void run() {
-        for (int i = 0; i < buyCount; i++) {
-            Ticket ticket = ticketPool.getTicket();
-            LogsSave.log(Thread.currentThread().getName() + " bought " + ticket);
+        try {
+            for (int i = 0; i < customerBuyCount; i++) {
+                Thread.sleep(customerReleaseRate * 1000); // Simulate rate in seconds
 
-            try {
-                Thread.sleep(retrievalRate);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
+                Ticket ticket = ticketPool.getTicket();
+                if (ticket != null) {
+                    System.out.println(Thread.currentThread().getName() + " bought a ticket. Remaining tickets in pool: " );
+                } else {
+                    System.out.println(Thread.currentThread().getName() + " could not buy a ticket. Pool is empty.");
+                }
             }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.out.println(Thread.currentThread().getName() + " was interrupted.");
         }
     }
 }

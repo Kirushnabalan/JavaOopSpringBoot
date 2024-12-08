@@ -1,21 +1,20 @@
 package com.example.finaljava.Service;
 
-import com.example.finaljava.Entity.DetailsEntity;
-import com.example.finaljava.LogsFileforThredSave.LogsSave;
 import com.example.finaljava.Model.*;
-import com.example.finaljava.Repository.TicketRepository; // Correct repository import
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.finaljava.LogsFileforThredSave.LogsSave;
+import com.google.gson.Gson;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class SimulationService {
 
-    @Autowired
-    private TicketRepository detailsRepository; // Correct repository for DetailsEntity
-
+    private static final String CONFIG_FILE_PATH = "configurations.json";
     private boolean isSimulationRunning = false;
 
     private Vendor[] vendors;
@@ -24,19 +23,20 @@ public class SimulationService {
     private Thread[] vendorThreads;
     private Thread[] customerThreads;
 
-    public void startSimulation(DetailsEntity config) {
+    // Start simulation based on configuration
+    public void startSimulation(Configuration config) {
         if (!isSimulationRunning) {
             isSimulationRunning = true;
 
-            // Initialize ticket pool
-            TicketPool ticketPool = new TicketPool(config.getTicketCapacity());
+            // Initialize ticket pool using the totalTickets and maximumTicketCapacity
+            TicketPool ticketPool = new TicketPool(config.getMaximumTicketCapacity());
 
             // Create vendor threads
             vendors = new Vendor[config.getVendorCount()];
             vendorThreads = new Thread[config.getVendorCount()];
 
             for (int i = 0; i < vendors.length; i++) {
-                vendors[i] = new Vendor(config.getTicketsPerVendor(), config.getVendorReleaseRate(), ticketPool);
+                vendors[i] = new Vendor(config.getTotalTickets(), config.getTicketReleaseRate(), ticketPool);
                 vendorThreads[i] = new Thread(vendors[i], "Vendor-" + i);
                 vendorThreads[i].start();
             }
@@ -46,7 +46,7 @@ public class SimulationService {
             customerThreads = new Thread[config.getCustomerCount()];
 
             for (int i = 0; i < customers.length; i++) {
-                customers[i] = new Customer(ticketPool, config.getCustomerBuyCount(),config.getCustomerReleaseRate());
+                customers[i] = new Customer(ticketPool, config.getCustomerTicketQuantity(), config.getCustomerRetrievalRate());
                 customerThreads[i] = new Thread(customers[i], "Customer-" + i);
                 customerThreads[i].start();
             }
@@ -54,7 +54,7 @@ public class SimulationService {
             System.out.println("Simulation started successfully!");
         }
 
-        try{
+        try {
             // Wait for all vendor threads to complete
             for (Thread vendorThread : vendorThreads) {
                 vendorThread.join();
@@ -65,31 +65,29 @@ public class SimulationService {
                 customerThread.join();
             }
 
+            // Write simulation logs to file
             LogsSave.writeToJsonFile("simulation_events.json");
             System.out.println("All customers have bought tickets.");
-
-        }catch (Exception e){
-            e.printStackTrace();
+        } catch (InterruptedException e) {
+            System.err.println("Simulation interrupted: " + e.getMessage());
+            Thread.currentThread().interrupt();
         }
     }
 
+    // Stop simulation and interrupt all threads
     public void stopSimulation() {
         if (isSimulationRunning) {
             // Interrupt vendor threads
-            if (vendorThreads != null) {
-                for (Thread vendorThread : vendorThreads) {
-                    if (vendorThread != null) {
-                        vendorThread.interrupt();
-                    }
+            for (Thread vendorThread : vendorThreads) {
+                if (vendorThread != null) {
+                    vendorThread.interrupt();
                 }
             }
 
             // Interrupt customer threads
-            if (customerThreads != null) {
-                for (Thread customerThread : customerThreads) {
-                    if (customerThread != null) {
-                        customerThread.interrupt();
-                    }
+            for (Thread customerThread : customerThreads) {
+                if (customerThread != null) {
+                    customerThread.interrupt();
                 }
             }
 
@@ -98,17 +96,57 @@ public class SimulationService {
         }
     }
 
-    public DetailsEntity saveConfiguration(DetailsEntity config) {
-        return detailsRepository.save(config); // Use the correct repository
+    // Save the configuration to the JSON file
+    public void saveConfiguration(Configuration config) {
+        try {
+            // Load existing configurations from the JSON file
+            List<Configuration> configs = loadAllConfigurations();
+
+            // Add the new configuration
+            configs.add(config);
+
+            // Save the updated list back to the file
+            try (FileWriter writer = new FileWriter(CONFIG_FILE_PATH)) {
+                new Gson().toJson(configs, writer);
+            }
+
+            System.out.println("Configuration saved successfully!");
+        } catch (Exception e) {
+            System.err.println("Error saving configuration: " + e.getMessage());
+        }
     }
 
-    public List<DetailsEntity> getAllConfigs() {
-        return detailsRepository.findAll(); // Fetch all details from the repository
+    // Load all configurations from the JSON file
+    public List<Configuration> loadAllConfigurations() {
+        try {
+            File file = new File(CONFIG_FILE_PATH);
+
+            // Check if the file exists, create it if not
+            if (!file.exists()) {
+                file.createNewFile();
+                return new ArrayList<>(); // Return an empty list as there are no configurations yet
+            }
+
+            // Read the JSON file and convert it to a list of Configuration objects
+            try (FileReader reader = new FileReader(file)) {
+                Configuration[] configs = new Gson().fromJson(reader, Configuration[].class);
+                if (configs != null) {
+                    return new ArrayList<>(List.of(configs));
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Error loading configurations: " + e.getMessage());
+        }
+
+        return new ArrayList<>(); // Return an empty list if any errors occur
     }
 
-    public Optional<DetailsEntity> loadConfiguration(Long id) {
-        // Use findById to retrieve the DetailsEntity by id
-        return detailsRepository.findById(Math.toIntExact(id));
+    // Load a configuration by its index (ID)
+    public Configuration loadConfigurationById(int id) {
+        List<Configuration> configs = loadAllConfigurations();
+        if (id >= 0 && id < configs.size()) {
+            return configs.get(id); // Return the configuration at the given index
+        }
+        throw new IllegalArgumentException("Configuration with ID " + id + " not found.");
     }
-
 }

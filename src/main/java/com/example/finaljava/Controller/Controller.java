@@ -1,6 +1,8 @@
 package com.example.finaljava.Controller;
 
 import com.example.finaljava.Entity.DetailsEntity;
+import com.example.finaljava.Model.Configuration;
+import com.example.finaljava.Service.SimulationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,24 +15,18 @@ import java.util.Optional;
 public class Controller {
 
     @Autowired
-    private com.example.finaljava.Service.SimulationService simulationService;
+    private SimulationService simulationService;
 
     @PostMapping("/start")
-    public String startSimulation(@RequestBody DetailsEntity config) {
+    public String startSimulation(@RequestBody Configuration config) {
         simulationService.startSimulation(config);
         return "Simulation started!";
     }
 
     @PostMapping("/save")
-    public String saveConfiguration(@RequestBody DetailsEntity config) {
+    public String saveConfiguration(@RequestBody Configuration config) {
         simulationService.saveConfiguration(config);
-        return "save Details!";
-    }
-
-    @GetMapping("/show")
-    public List<DetailsEntity> getAllConfigs() {
-        // Fetch all configurations from the service and return them
-        return simulationService.getAllConfigs();
+        return "Details saved!";
     }
 
     @PostMapping("/stop")
@@ -38,10 +34,24 @@ public class Controller {
         simulationService.stopSimulation();
         return "Simulation stopped!";
     }
-    @GetMapping("/show/{id}")
-    public DetailsEntity getConfigById(@PathVariable Long id) {
-        // Fetch configuration by ID from the service
-        Optional<DetailsEntity> config = simulationService.loadConfiguration(id);
-        return config.orElse(null);
+
+    // Assuming you meant to stop the simulation in 'stopSimulation' rather than calling an undefined 'endSimulation'.
+    @PostMapping("/end")
+    public String endSimulation() {
+        simulationService.stopSimulation();  // Using stopSimulation() instead of endSimulation()
+        return "Simulation ended and resources cleaned!";
     }
+
+//    // Fetch all configurations saved in the system
+//    @GetMapping("/show")
+//    public List<DetailsEntity> getAllConfigs() {
+//        return simulationService.getAllConfigs();  // This should return a list of saved configurations.
+//    }
+
+    // Fetch configuration details by ID
+//    @GetMapping("/show/{id}")
+//    public DetailsEntity getConfigById(@PathVariable int id) {
+//        Optional<DetailsEntity> config = simulationService.loadConfigurationById(id);
+//        return config.orElse(null);  // If the configuration is not found, return null
+//    }
 }
