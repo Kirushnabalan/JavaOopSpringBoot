@@ -31,6 +31,7 @@ public class Configuration {
         }
     }
 
+
     public void saveToJson(String defaultFilePath) throws IOException {
         Gson gson = new Gson();
 
@@ -106,55 +107,33 @@ public class Configuration {
         return totalTickets;
     }
 
-    public void setTotalTickets(int totalTickets) {
-        this.totalTickets = totalTickets;
-    }
 
     public int getTicketReleaseRate() {
         return ticketReleaseRate;
     }
 
-    public void setTicketReleaseRate(int ticketReleaseRate) {
-        this.ticketReleaseRate = ticketReleaseRate;
-    }
 
     public int getVendorCount() {
         return vendorCount;
     }
 
-    public void setVendorCount(int vendorCount) {
-        this.vendorCount = vendorCount;
-    }
 
     public int getCustomerCount() {
         return customerCount;
     }
 
-    public void setCustomerCount(int customerCount) {
-        this.customerCount = customerCount;
-    }
 
     public int getCustomerRetrievalRate() {
         return customerRetrievalRate;
     }
 
-    public void setCustomerRetrievalRate(int customerRetrievalRate) {
-        this.customerRetrievalRate = customerRetrievalRate;
-    }
 
     public int getCustomerTicketQuantity() {
         return customerTicketQuantity;
-    }
-
-    public void setCustomerTicketQuantity(int customerTicketQuantity) {
-        this.customerTicketQuantity = customerTicketQuantity;
     }
 
     public int getMaximumTicketCapacity() {
         return maximumTicketCapacity;
     }
 
-    public void setMaximumTicketCapacity(int maximumTicketCapacity) {
-        this.maximumTicketCapacity = maximumTicketCapacity;
-    }
 }

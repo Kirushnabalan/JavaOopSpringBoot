@@ -19,9 +19,9 @@ public class Customer implements Runnable {
 
                 Ticket ticket = ticketPool.getTicket();
                 if (ticket != null) {
-                    System.out.println(Thread.currentThread().getName() + " bought a ticket. Remaining tickets in pool: " );
+                    Logger.info(Thread.currentThread().getName() + " bought a ticket. Remaining tickets in pool: " );
                 } else {
-                    System.out.println(Thread.currentThread().getName() + " could not buy a ticket. Pool is empty.");
+                    Logger.info(Thread.currentThread().getName() + " could not buy a ticket. Pool is empty.");
                 }
             }
         } catch (InterruptedException e) {

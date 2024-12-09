@@ -42,12 +42,11 @@ public class Controller {
         return "Simulation ended and resources cleaned!";
     }
 
-//    // Fetch all configurations saved in the system
-//    @GetMapping("/show")
-//    public List<DetailsEntity> getAllConfigs() {
-//        return simulationService.getAllConfigs();  // This should return a list of saved configurations.
-//    }
-
+    // Fetch all configurations saved in the system
+    @GetMapping("/show")
+    public List<Configuration> getAllConfigs() {
+        return simulationService.getAllConfigs(); // Returns list of configurations
+    }
     // Fetch configuration details by ID
 //    @GetMapping("/show/{id}")
 //    public DetailsEntity getConfigById(@PathVariable int id) {

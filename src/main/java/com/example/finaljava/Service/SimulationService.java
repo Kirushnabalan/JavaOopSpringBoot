@@ -2,12 +2,12 @@ package com.example.finaljava.Service;
 
 import com.example.finaljava.Model.*;
 import com.example.finaljava.LogsFileforThredSave.LogsSave;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -148,5 +148,14 @@ public class SimulationService {
             return configs.get(id); // Return the configuration at the given index
         }
         throw new IllegalArgumentException("Configuration with ID " + id + " not found.");
+    }
+
+    public List<Configuration> getAllConfigs() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try (InputStream inputStream = getClass().getResourceAsStream("/configurations.json")) {
+            return objectMapper.readValue(inputStream, new TypeReference<List<Configuration>>() {});
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to read configurations from JSON file", e);
+        }
     }
 }
