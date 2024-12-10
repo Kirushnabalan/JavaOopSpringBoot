@@ -1,9 +1,10 @@
 package com.example.finaljava.Model;
 
 public class Customer implements Runnable {
+
     private TicketPool ticketPool;
-    private int customerBuyCount;
-    private int customerReleaseRate;
+    private final int customerBuyCount;
+    private final int customerReleaseRate;
 
     public Customer(TicketPool ticketPool, int customerBuyCount, int customerReleaseRate) {
         this.ticketPool = ticketPool;
@@ -19,14 +20,17 @@ public class Customer implements Runnable {
 
                 Ticket ticket = ticketPool.getTicket();
                 if (ticket != null) {
-                    Logger.info(Thread.currentThread().getName() + " bought a ticket. Remaining tickets in pool: " );
+                    Logger.info(Thread.currentThread().getName() +" bought a ticket. Remaining tickets in pool: " + ticketPool.getTicketSize());
                 } else {
                     Logger.info(Thread.currentThread().getName() + " could not buy a ticket. Pool is empty.");
                 }
             }
+
+            // Add this message when the thread finishes all operations
+            Logger.info( "Customer has finished buying tickets.");
+
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            System.out.println(Thread.currentThread().getName() + " was interrupted.");
         }
     }
 }

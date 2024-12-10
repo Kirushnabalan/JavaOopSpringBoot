@@ -1,0 +1,2137 @@
+[
+  {
+    "timestamp": "2024-12-11 00:32:16",
+    "level": "MESSAGE",
+    "message": "Starting with the saved configuration..."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:16",
+    "level": "INFO",
+    "message": "Threads have started. Type \u0027stop\u0027 to halt threads and view the summary."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-7 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-5 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-10 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-12 bought a ticket. Remaining tickets in pool: 3"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-1 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-11 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-17 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-2 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-6 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-3 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-8 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-18 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-16 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-19 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-4 bought a ticket. Remaining tickets in pool: 3"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-9 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-13 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-15 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-20 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:20",
+    "level": "INFO",
+    "message": "Customer-14 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-7 bought a ticket. Remaining tickets in pool: 3"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-5 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-10 bought a ticket. Remaining tickets in pool: 3"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-1 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-3 bought a ticket. Remaining tickets in pool: 3"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-12 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-11 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-17 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-2 bought a ticket. Remaining tickets in pool: 3"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-8 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-6 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-9 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-4 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-13 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-18 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-16 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-20 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-15 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-19 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:24",
+    "level": "INFO",
+    "message": "Customer-14 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-7 bought a ticket. Remaining tickets in pool: 3"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-5 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-10 bought a ticket. Remaining tickets in pool: 3"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-1 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-3 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-12 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-17 bought a ticket. Remaining tickets in pool: 3"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-2 bought a ticket. Remaining tickets in pool: 3"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-8 bought a ticket. Remaining tickets in pool: 3"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-6 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-11 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-13 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-4 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-9 bought a ticket. Remaining tickets in pool: 3"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-18 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-16 bought a ticket. Remaining tickets in pool: 3"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-15 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-19 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-14 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:28",
+    "level": "INFO",
+    "message": "Customer-20 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-7 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-5 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-10 bought a ticket. Remaining tickets in pool: 3"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-3 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-12 bought a ticket. Remaining tickets in pool: 3"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-1 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-17 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-13 bought a ticket. Remaining tickets in pool: 3"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-8 bought a ticket. Remaining tickets in pool: 3"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-2 bought a ticket. Remaining tickets in pool: 3"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-11 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-6 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-16 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-15 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-18 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-4 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-9 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d 4,Event\u003dd, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-19 bought a ticket. Remaining tickets in pool: 2"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-20 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer-14 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:32:32",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:26",
+    "level": "MESSAGE",
+    "message": "Starting with the saved configuration..."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:26",
+    "level": "INFO",
+    "message": "Threads have started. Type \u0027stop\u0027 to halt threads and view the summary."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-20 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-9 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-13 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-1 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-11 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-14 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-15 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-4 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-5 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-18 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-7 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-3 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-16 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-12 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-17 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-2 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-19 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-8 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-10 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d f,Event\u003df, Rate\u003d1.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer-6 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:28",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:39",
+    "level": "MESSAGE",
+    "message": "Threads have been stopped."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:52",
+    "level": "INFO",
+    "message": "Threads have started. Type \u0027stop\u0027 to halt threads and view the summary."
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-19 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-2 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-3 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-9 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-8 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-7 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-20 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-4 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-17 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-6 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-5 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-16 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-1 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-10 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-18 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-15 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-11 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-13 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d1,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-12 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:34:56",
+    "level": "INFO",
+    "message": "Customer-14 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-19 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-2 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-3 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-9 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-7 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-8 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-20 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-6 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-4 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-17 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-18 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-16 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-1 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-5 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-15 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-11 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-10 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-14 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-13 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d2,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:00",
+    "level": "INFO",
+    "message": "Customer-12 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-19 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-3 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-2 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-9 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-4 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-8 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-7 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-18 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-17 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-20 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-1 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-16 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-5 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-12 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-6 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-10 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-15 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-13 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-11 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d3,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:04",
+    "level": "INFO",
+    "message": "Customer-14 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-19 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-2 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-3 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-9 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-7 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-8 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-4 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-18 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-20 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-17 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-16 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-1 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-12 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-5 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-6 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-15 bought a ticket. Remaining tickets in pool: 1"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-13 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-10 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-11 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Adding ticket Ticket{ID\u003d4,TheaterName \u003d g,Event\u003dg, Rate\u003d4.0}"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer-14 bought a ticket. Remaining tickets in pool: 0"
+  },
+  {
+    "timestamp": "2024-12-11 00:35:08",
+    "level": "INFO",
+    "message": "Customer has finished buying tickets."
+  },
+  {
+    "timestamp": "2024-12-11 00:35:15",
+    "level": "MESSAGE",
+    "message": "Threads have been stopped."
+  }
+]

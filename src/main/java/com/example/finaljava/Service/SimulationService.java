@@ -1,139 +1,160 @@
 package com.example.finaljava.Service;
 
 import com.example.finaljava.Model.*;
-import com.example.finaljava.LogsFileforThredSave.LogsSave;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.example.finaljava.Repository.CustomerEntityRepo;
+import com.example.finaljava.Repository.VendorRepository;
+import com.example.finaljava.Entity.CustomerEntity;
+import com.example.finaljava.Entity.VendorEntity;
 import com.google.gson.Gson;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class SimulationService {
+    @Autowired
+    private CustomerEntityRepo customerEntityRepo; // Repository for Customer
+    @Autowired
+    private VendorRepository vendorRepository; // VendorRepository for saving vendor entities
 
     private static final String CONFIG_FILE_PATH = "configurations.json";
     private boolean isSimulationRunning = false;
-
-    private Vendor[] vendors;
-    private Customer[] customers;
-
-    private Thread[] vendorThreads;
-    private Thread[] customerThreads;
+    private static final ArrayList<Thread> activeThreads = new ArrayList<>();
 
     // Start simulation based on configuration
     public void startSimulation(Configuration config) {
         if (!isSimulationRunning) {
             isSimulationRunning = true;
 
-            // Initialize ticket pool using the totalTickets and maximumTicketCapacity
             TicketPool ticketPool = new TicketPool(config.getMaximumTicketCapacity());
+            Vendor[] vendors = new Vendor[10];
+            Customer[] customers = new Customer[10];
 
-            // Create vendor threads
-            vendors = new Vendor[config.getVendorCount()];
-            vendorThreads = new Thread[config.getVendorCount()];
-
+            // Start vendor threads and save Vendor data to database
             for (int i = 0; i < vendors.length; i++) {
-                vendors[i] = new Vendor(config.getTotalTickets(), config.getTicketReleaseRate(), ticketPool);
-                vendorThreads[i] = new Thread(vendors[i], "Vendor-" + i);
-                vendorThreads[i].start();
+                vendors[i] = new Vendor(config.getTotalTickets(), config.getTicketReleaseRate(), ticketPool,
+                        config.getTheaterName(), config.getEventName(),
+                        config.getTicketPrice());
+
+                VendorEntity vendorEntity = new VendorEntity(
+                        "Vendor-" + (i + 1),               // Vendor name
+                        config.getTheaterName(),           // Theater name
+                        config.getEventName(),             // Event name
+                        config.getTicketPrice() // Ticket price as BigDecimal
+                );
+                vendorRepository.save(vendorEntity);
+
+                // Start the vendor thread
+                Thread vendorThread = new Thread(vendors[i], "Vendor-" + (i + 1));
+                activeThreads.add(vendorThread);
+                vendorThread.start();
             }
 
-            // Create customer threads
-            customers = new Customer[config.getCustomerCount()];
-            customerThreads = new Thread[config.getCustomerCount()];
-
+            // Start customer threads and save Customer data to database
             for (int i = 0; i < customers.length; i++) {
-                customers[i] = new Customer(ticketPool, config.getCustomerTicketQuantity(), config.getCustomerRetrievalRate());
-                customerThreads[i] = new Thread(customers[i], "Customer-" + i);
-                customerThreads[i].start();
+                // Initialize the Customer instance
+                customers[i] = new Customer(
+                        ticketPool,
+                        config.getTotalTickets(),
+                        config.getCustomerRetrievalRate()
+                );
+
+                // Save CustomerEntity to the database
+                CustomerEntity customerEntity = new CustomerEntity(
+                        "Customer-" + (i + 1),                // Customer name
+                        config.getTotalTickets(),             // Total tickets
+                        config.getCustomerRetrievalRate()     // Ticket retrieval rate
+                );
+                customerEntityRepo.save(customerEntity);
+
+                // Start the customer thread
+                Thread customerThread = new Thread(customers[i], "Customer-" + (i + 1));
+                activeThreads.add(customerThread);
+                customerThread.start();
             }
 
-            System.out.println("Simulation started successfully!");
+            System.out.println("Simulation started. Enter 'stop' to halt threads and view the summary.");
+
+            // Wait for all threads to finish and join
+            for (Thread thread : activeThreads) {
+                try {
+                    thread.join();  // Wait for each thread to finish
+                } catch (InterruptedException e) {
+                    System.err.println("Error waiting for thread to finish: " + e.getMessage());
+                }
+            }
+
+            // Clear the list of active threads
+            activeThreads.clear();
         }
 
-        try {
-            // Wait for all vendor threads to complete
-            for (Thread vendorThread : vendorThreads) {
-                vendorThread.join();
-            }
-
-            // Wait for all customer threads to complete
-            for (Thread customerThread : customerThreads) {
-                customerThread.join();
-            }
-
-            // Write simulation logs to file
-            LogsSave.writeToJsonFile("simulation_events.json");
-            System.out.println("All customers have bought tickets.");
-        } catch (InterruptedException e) {
-            System.err.println("Simulation interrupted: " + e.getMessage());
-            Thread.currentThread().interrupt();
-        }
+        // Save the Ticket Log data to the database
     }
 
-    // Stop simulation and interrupt all threads
+    // Stop the simulation
     public void stopSimulation() {
         if (isSimulationRunning) {
-            // Interrupt vendor threads
-            for (Thread vendorThread : vendorThreads) {
-                if (vendorThread != null) {
-                    vendorThread.interrupt();
-                }
+            for (Thread thread : activeThreads) {
+                thread.interrupt();  // Interrupt all threads
             }
-
-            // Interrupt customer threads
-            for (Thread customerThread : customerThreads) {
-                if (customerThread != null) {
-                    customerThread.interrupt();
-                }
-            }
-
+            Logger.newMessage("All threads stopped.");
             isSimulationRunning = false;
-            System.out.println("Simulation stopped.");
+        } else {
+            System.out.println("No simulation is running.");
         }
     }
 
     // Save the configuration to the JSON file
     public void saveConfiguration(Configuration config) {
         try {
-            // Load existing configurations from the JSON file
+            // Load existing configurations
             List<Configuration> configs = loadAllConfigurations();
 
-            // Add the new configuration
+            // Assign a new Theater ID based on the size of the configurations list
+            config.setTheaterID(configs.size() + 1);
+
+            // Add the new configuration to the list
             configs.add(config);
 
-            // Save the updated list back to the file
+            // Save the updated list of configurations back to the file
+            Gson gson = new Gson();
             try (FileWriter writer = new FileWriter(CONFIG_FILE_PATH)) {
-                new Gson().toJson(configs, writer);
+                gson.toJson(configs, writer);
             }
 
-            System.out.println("Configuration saved successfully!");
+            System.out.println("Configuration saved successfully with Theater ID: " + config.getTheaterID());
         } catch (Exception e) {
             System.err.println("Error saving configuration: " + e.getMessage());
+            e.printStackTrace();
         }
     }
+
 
     // Load all configurations from the JSON file
     public List<Configuration> loadAllConfigurations() {
         try {
             File file = new File(CONFIG_FILE_PATH);
 
-            // Check if the file exists, create it if not
+            // Create file if it doesn't exist
             if (!file.exists()) {
                 file.createNewFile();
-                return new ArrayList<>(); // Return an empty list as there are no configurations yet
+                return new ArrayList<>(); // Return an empty list
             }
 
-            // Read the JSON file and convert it to a list of Configuration objects
+            // Read configurations from the JSON file
             try (FileReader reader = new FileReader(file)) {
                 Configuration[] configs = new Gson().fromJson(reader, Configuration[].class);
                 if (configs != null) {
                     return new ArrayList<>(List.of(configs));
                 }
             }
+
         } catch (Exception e) {
             System.err.println("Error loading configurations: " + e.getMessage());
         }
@@ -141,21 +162,12 @@ public class SimulationService {
         return new ArrayList<>(); // Return an empty list if any errors occur
     }
 
-    // Load a configuration by its index (ID)
+    // Load a configuration by its ID
     public Configuration loadConfigurationById(int id) {
         List<Configuration> configs = loadAllConfigurations();
         if (id >= 0 && id < configs.size()) {
-            return configs.get(id); // Return the configuration at the given index
+            return configs.get(id);
         }
         throw new IllegalArgumentException("Configuration with ID " + id + " not found.");
-    }
-
-    public List<Configuration> getAllConfigs() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        try (InputStream inputStream = getClass().getResourceAsStream("/configurations.json")) {
-            return objectMapper.readValue(inputStream, new TypeReference<List<Configuration>>() {});
-        } catch (IOException e) {
-            throw new RuntimeException("Failed to read configurations from JSON file", e);
-        }
     }
 }

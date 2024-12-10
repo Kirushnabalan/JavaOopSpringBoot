@@ -1,143 +1,225 @@
 package com.example.finaljava.Model;
 
-import com.google.gson.Gson;
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    private static final String DEFAULT_FILE_PATH = "config.json"; // Default file path for saving configuration
+    private static final String SetFilePath = "config.json"; // Path to save the configuration file
+    private static final ArrayList<Thread> activeThreads = new ArrayList<>(); // List to store active threads
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Configuration config = null;
+        Scanner getInput = new Scanner(System.in); // Scanner to read user input
+        List<Configuration> configs = Configuration.loadAllConfigurations(); // Load all saved configurations
+        Configuration selectedConfig;
 
         while (true) {
             try {
-                System.out.println(">> Would you like to save the configuration to a file? (yes/no)");
-                String saveOption = readInput(scanner);
-
-                if ("yes".equalsIgnoreCase(saveOption)) {
-                    config = Configuration.collectFromInput(scanner);
-
-                    try {
-                        config.saveToJson(DEFAULT_FILE_PATH);
-                        System.out.println("Configuration saved to file: " + DEFAULT_FILE_PATH);
-                    } catch (Exception e) {
-                        System.out.println("Error saving configuration to file: " + e.getMessage());
-                    }
-                } else if ("no".equalsIgnoreCase(saveOption)) {
-                    config = Configuration.collectFromInput(scanner);
+                System.out.println("===== Available Configurations =====");
+                if (configs.isEmpty()) {
+                    System.out.println("No configurations found.");
                 } else {
-                    System.out.println("Invalid input. Please enter 'yes' or 'no'.");
+                    for (int i = 0; i < configs.size(); i++) {
+                        Configuration config = configs.get(i);
+                        System.out.printf("%d. Theater ID: %d, Event: %s, Theater Name: %s%n",
+                                i + 1, config.getTheaterID(), config.getEventName(), config.getTheaterName());
+                    }
+                }
+
+                // Asking for Yes/No input for loading a configuration
+                System.out.println(">> Would you like to load a configuration from the file? (yes/no)");
+                String loadOption = Configuration.readInput(getInput);  // readInput() used for yes/no question
+
+                if ("yes".equalsIgnoreCase(loadOption)) {
+                    if (configs.isEmpty()) {
+                        System.out.println("No configurations available to load.");
+                        continue;
+                    }
+
+                    System.out.print(">> Enter the Theater ID of the configuration to load: ");
+                    try {
+                        int theaterID = getInput.nextInt();  // Handling user input for Theater ID
+                        getInput.nextLine(); // Clear newline
+
+                        selectedConfig = configs.stream()
+                                .filter(config -> config.getTheaterID() == theaterID)
+                                .findFirst()
+                                .orElse(null);
+
+                        if (selectedConfig == null) {
+                            System.out.println("No configuration found with the provided Theater ID.");
+                            continue;
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Invalid input for Theater ID. Please enter a valid number.");
+                        getInput.nextLine(); // Clear invalid input
+                        continue;
+                    }
+
+                } else if ("no".equalsIgnoreCase(loadOption)) {
+                    // Gather configuration data from the user
+                    selectedConfig = Configuration.getDataFromPrompt(getInput);
+
+                    // Asking if the user wants to save the configuration (Yes/No)
+                    System.out.println(">> Would you like to save this configuration to the file? (yes/no)");
+                    String saveOption = Configuration.readInput(getInput);  // readInput() used for yes/no question
+
+                    if ("yes".equalsIgnoreCase(saveOption)) {
+                        try {
+                            saveConfiguration(selectedConfig); // Saving the configuration
+                        } catch (Exception e) {
+                            Logger.error("Error saving configuration: " + e.getMessage());
+                        }
+                    } else {
+                        handleStartRestartOrExit(getInput); // Proceed to handle start/restart/exit
+                    }
+                } else {
+                    Logger.warn("Invalid input. Please enter 'yes' or 'no'.");
                     continue;
                 }
 
-                while (true) {
-                    System.out.println(">> Enter an action: (start/restart/exit)");
-                    String action = readInput(scanner);
+                startThreads(selectedConfig, getInput); // Start threads with the selected configuration
+                break; // Exit the loop once threads are started
 
-                    switch (action.toLowerCase()) {
-                        case "start":
-                            System.out.println("Thread started. Type 'stop' to stop the threads and view the summary.");
-                            startThread(config, scanner);
-                            break;
-                        case "restart":
-                            System.out.println("Restarting configuration collection...");
-                            break;
-                        case "stop":
-                            stopThreads();
-                            displaySummary(config);
-                            break;
-                        case "exit":
-                            System.out.println("Exiting the program. Goodbye!");
-                            scanner.close();
-                            return;
-                        default:
-                            System.out.println("Invalid action. Please enter 'start', 'restart', 'stop', or 'exit'.");
-                            continue;
-                    }
-
-                    if ("restart".equalsIgnoreCase(action)) {
-                        break;
-                    }
-                }
             } catch (Exception e) {
-                System.out.println("An error occurred: " + e.getMessage());
-                scanner.nextLine(); // Clear the scanner buffer in case of invalid input
+                Logger.error("An error occurred: " + e.getMessage());
+                getInput.nextLine(); // Clear the scanner buffer
             }
         }
     }
 
-    // Add a list of threads to be stopped later
-    private static ArrayList<Thread> activeThreads = new ArrayList<>();
+    private static void showInputSummary(Configuration config) {
+        // Display a summary of the configuration that the user has inputted
+        System.out.println("\n===== Configuration Summary =====");
+        System.out.println("Event Name: " + config.getEventName());
+        System.out.println("Theater Name: " + config.getTheaterName());
+        System.out.println("Total Tickets: " + config.getTotalTickets());
+        System.out.println("Ticket Release Rate: " + config.getTicketReleaseRate() + " seconds per ticket");
+        System.out.println("Customer Retrieval Rate: " + config.getCustomerRetrievalRate() + " seconds per ticket");
+        System.out.println("Maximum Ticket Capacity: " + config.getMaximumTicketCapacity());
+        System.out.println("Ticket Price: " + config.getTicketPrice());
+    }
 
-    public static void startThread(Configuration config, Scanner scanner) {
+    private static void startThreads(Configuration config, Scanner getInput) {
         TicketPool ticketPool = new TicketPool(config.getMaximumTicketCapacity());
         Vendor[] vendors = new Vendor[config.getVendorCount()];
         Customer[] customers = new Customer[config.getCustomerCount()];
 
-        // Initialize and start vendor threads
-        for (int i = 0; i < config.getVendorCount(); i++) {
-            vendors[i] = new Vendor(config.getTotalTickets(), config.getTicketReleaseRate(), ticketPool);
-            Thread vendorThread = new Thread(vendors[i]);
-            activeThreads.add(vendorThread);  // Add to active threads list
+        // Start vendor threads
+        for (int i = 0; i < vendors.length; i++) {
+            vendors[i] = new Vendor(config.getTotalTickets(), config.getTicketReleaseRate(), ticketPool, config.getTheaterName(), config.getEventName(), config.getTicketPrice());
+            Thread vendorThread = new Thread(vendors[i], "Vendor-" + (i + 1));
+            activeThreads.add(vendorThread);
             vendorThread.start();
         }
 
-        // Initialize and start customer threads
-        for (int i = 0; i < config.getCustomerCount(); i++) {
-            customers[i] = new Customer(ticketPool, config.getCustomerTicketQuantity(), config.getCustomerRetrievalRate());
-            Thread customerThread = new Thread(customers[i]);
-            activeThreads.add(customerThread); // Add to active threads list
+        // Start customer threads
+        for (int i = 0; i < customers.length; i++) {
+            customers[i] = new Customer(ticketPool, config.getTotalTickets(), config.getCustomerRetrievalRate());
+            Thread customerThread = new Thread(customers[i], "Customer-" + (i + 1));
+            activeThreads.add(customerThread);
             customerThread.start();
         }
 
-        // Monitor for stop command while threads are running
+        Logger.info("Threads have started. Type 'stop' to halt threads and view the summary.");
+
+        // Wait for user input to stop threads
         while (true) {
-            String action = readInput(scanner);
-            if ("stop".equalsIgnoreCase(action)) {
-                stopThreads();
-                displaySummary(config);
-                break;
+            try {
+                String command = getInput.nextLine();  // readInput() used for 'stop' command
+                if ("stop".equalsIgnoreCase(command)) {
+                    stopThreads(); // Stop all threads
+                    showInputSummary(config); // Show input summary
+                    handleRestartOrExit(getInput); // Handle restart/exit decision
+                    break;
+                }
+            } catch (Exception e) {
+                Logger.error("Error reading input: " + e.getMessage());
             }
         }
 
-        // Wait for all threads to finish by calling join on each thread
+        // Wait for all threads to finish and join
         for (Thread thread : activeThreads) {
             try {
-                thread.join(); // This ensures the main thread waits for the worker threads to finish
+                thread.join();  // Wait for each thread to finish
+                Logger.info(thread.getName() + " has finished.");
             } catch (InterruptedException e) {
-                e.printStackTrace(); // Handle interruption properly
+                Logger.error("Error waiting for thread to finish: " + e.getMessage());
             }
         }
-        System.out.println("All threads have completed execution.");
+
+        // Clear the list of active threads
+        activeThreads.clear();
     }
 
-    // Method to stop all threads
-    public static void stopThreads() {
-        // Set flag or interrupt threads to stop
+    private static void stopThreads() {
         for (Thread thread : activeThreads) {
-            thread.interrupt();
+            thread.interrupt(); // Interrupt each thread
         }
-
-        System.out.println("Threads have been stopped.");
+        System.out.println(" ");
+        Logger.newMessage("Threads have been stopped.");
     }
 
-    private static void displaySummary(Configuration config) {
-        System.out.println("===== Configuration Summary =====");
-        System.out.println("Total Tickets: " + config.getTotalTickets());
-        System.out.println("Ticket Release Rate: " + config.getTicketReleaseRate() + " seconds per ticket");
-        System.out.println("Number of Vendors: " + config.getVendorCount());
-        System.out.println("Number of Customers: " + config.getCustomerCount());
-        System.out.println("Customer Retrieval Rate: " + config.getCustomerRetrievalRate() + " seconds per ticket");
-        System.out.println("Customer Ticket Quantity: " + config.getCustomerTicketQuantity());
-        System.out.println("Maximum Ticket Capacity: " + config.getMaximumTicketCapacity());
+    private static void saveConfiguration(Configuration config) {
+        try {
+            config.saveToJson(); // Save the configuration to a file
+            Logger.info("Configuration saved to file: " + SetFilePath);
+            System.out.println("Configuration saved successfully.");
+            handleStartRestartOrExit(new Scanner(System.in)); // Ask the user what to do next
+        } catch (Exception e) {
+            Logger.error("Error saving configuration to file: " + e.getMessage());
+        }
     }
 
-    private static String readInput(Scanner scanner) {
-        while (!scanner.hasNextLine()) {
-            System.out.println("No input detected. Please try again.");
+    private static void handleRestartOrExit(Scanner getInput) {
+        while (true) {
+            try {
+                System.out.println(">> Would you like to restart or exit? (restart/exit)");
+                String choice = getInput.nextLine();  // Read the user's input
+
+                // Validation to ensure valid input
+                if ("restart".equalsIgnoreCase(choice)) {
+                    main(new String[0]); // Restart the program
+                    break; // Exit the loop
+                } else if ("exit".equalsIgnoreCase(choice)) {
+                    Logger.newMessage("Exiting the program. Goodbye!");
+                    System.exit(0); // Exit the program
+                } else {
+                    Logger.warn("Invalid input. Please enter 'restart' or 'exit'.");
+                    System.out.println("Invalid choice. Please enter either 'restart' or 'exit'."); // User prompt for valid input
+                }
+            } catch (Exception e) {
+                Logger.error("Error handling restart/exit choice: " + e.getMessage());
+                System.out.println("An error occurred. Please try again.");
+            }
         }
-        return scanner.nextLine().trim();
+    }
+
+    private static void handleStartRestartOrExit(Scanner getInput) {
+        while (true) {
+            try {
+                System.out.println(">> Would you like to start, restart, or exit? (start/restart/exit)");
+                String choice = getInput.nextLine();  // Read the user's input
+
+                // Validation to ensure valid input
+                if ("start".equalsIgnoreCase(choice)) {
+                    Logger.newMessage("Starting with the saved configuration...");
+                    break; // Proceed with the saved configuration
+                } else if ("restart".equalsIgnoreCase(choice)) {
+                    main(new String[0]); // Restart the program
+                    break; // Exit the loop
+                } else if ("exit".equalsIgnoreCase(choice)) {
+                    Logger.newMessage("Exiting the program. Goodbye!");
+                    System.exit(0); // Exit the program
+                } else {
+                    Logger.warn("Invalid input. Please enter 'start', 'restart', or 'exit'.");
+                    System.out.println("Invalid choice. Please enter either 'start', 'restart', or 'exit'."); // User prompt for valid input
+                }
+            } catch (Exception e) {
+                Logger.error("Error handling start/restart/exit choice: " + e.getMessage());
+                System.out.println("An error occurred. Please try again.");
+            }
+        }
     }
 }

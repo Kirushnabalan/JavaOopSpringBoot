@@ -1,45 +1,26 @@
 package com.example.finaljava.Model;
 
-import java.math.BigDecimal;
-
 public class Ticket {
+
     private int ticketId;
     private String eventName;
-    private BigDecimal eventPrice;
+    private String theaterName;
+    private Double eventPrice;
 
-    public Ticket(int ticketId, String eventName, BigDecimal eventPrice) {
+    public Ticket(int ticketId, String eventName, String theaterName, Double eventPrice) {
         this.ticketId = ticketId;
         this.eventName = eventName;
+        this.theaterName = theaterName;
         this.eventPrice = eventPrice;
     }
 
-    public int getTicketId() {
-        return ticketId;
-    }
+    public Ticket() {
 
-    public void setTicketId(int ticketId) {
-        this.ticketId = ticketId;
-    }
-
-    public String getEventName() {
-        return eventName;
-    }
-
-    public void setEventName(String eventName) {
-        this.eventName = eventName;
-    }
-
-    public BigDecimal getEventPrice() {
-        return eventPrice;
-    }
-
-    public void setEventPrice(BigDecimal eventPrice) {
-        this.eventPrice = eventPrice;
     }
 
     @Override
     public String toString() {
-        return "Ticket{ID=" + ticketId + ", Event='" + eventName + "', Rate=" + eventPrice + "}";
+        return "Ticket{ID=" + ticketId + ","+"TheaterName = "+ theaterName+","+"Event=" + eventName + ", Rate=" + eventPrice + "}"  ;
     }
 
 }
