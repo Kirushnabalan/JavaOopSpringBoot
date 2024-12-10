@@ -50,14 +50,4 @@ public class Controller {
         return simulationService.loadAllConfigurations();  // Fetch configurations from JSON file
     }
 
-    // Fetch a specific configuration by ID
-    @GetMapping("/show/{id}")
-    public Configuration getConfigById(@PathVariable int id) {
-        Configuration config = simulationService.loadConfigurationById(id);
-        if (config != null) {
-            return config;
-        } else {
-            throw new RuntimeException("Configuration with ID " + id + " not found.");
-        }
-    }
 }

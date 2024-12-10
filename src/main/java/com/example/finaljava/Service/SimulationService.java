@@ -161,13 +161,4 @@ public class SimulationService {
 
         return new ArrayList<>(); // Return an empty list if any errors occur
     }
-
-    // Load a configuration by its ID
-    public Configuration loadConfigurationById(int id) {
-        List<Configuration> configs = loadAllConfigurations();
-        if (id >= 0 && id < configs.size()) {
-            return configs.get(id);
-        }
-        throw new IllegalArgumentException("Configuration with ID " + id + " not found.");
-    }
 }
