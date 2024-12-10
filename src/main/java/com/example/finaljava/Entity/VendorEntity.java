@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "some1") // Table name in the database
+@Table(name = "Vendor") // Table name in the database
 public class VendorEntity {
 
     @Id
