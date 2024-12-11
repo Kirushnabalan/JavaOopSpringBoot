@@ -6,18 +6,24 @@ import com.example.finaljava.Repository.VendorRepository;
 import com.example.finaljava.Entity.CustomerEntity;
 import com.example.finaljava.Entity.VendorEntity;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.math.BigDecimal;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
 
 @Service
 public class SimulationService {
+    private static final String LOG_FILE_PATH = "logs.json";
+    private static final Gson gson = new Gson();
     @Autowired
     private CustomerEntityRepo customerEntityRepo; // Repository for Customer
     @Autowired
@@ -161,4 +167,25 @@ public class SimulationService {
 
         return new ArrayList<>(); // Return an empty list if any errors occur
     }
+
+    public List<Map<String, Object>> getLogs() {
+        List<Map<String, Object>> logList = new ArrayList<>();
+        try (FileReader reader = new FileReader(LOG_FILE_PATH)) {
+            JsonArray jsonArray = gson.fromJson(reader, JsonArray.class);
+            if (jsonArray != null) {
+                for (int i = 0; i < jsonArray.size(); i++) {
+                    JsonObject log = jsonArray.get(i).getAsJsonObject();
+                    if (!log.has("timestamp")) {
+                        log.addProperty("timestamp", System.currentTimeMillis()); // Add a timestamp if missing
+                    }
+                    // Convert JsonObject to Map<String, Object>
+                    logList.add(new Gson().fromJson(log, Map.class));
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return logList;
+    }
+
 }

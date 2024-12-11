@@ -3,10 +3,10 @@ package com.example.finaljava.Model;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -17,8 +17,8 @@ public class Configuration {
     private int theaterID; // Auto-incrementing Theater ID
     private int totalTickets;
     private int ticketReleaseRate;
-    private int vendorCount = 20; // Default value
-    private int customerCount = 20; // Default value
+    private int VendorCount;
+    private int CustomerCount;
     private int customerRetrievalRate;
     private int maximumTicketCapacity;
     private Double ticketPrice;
@@ -26,7 +26,7 @@ public class Configuration {
     private static final String CONFIG_FILE_PATH = "configurations.json";
 
     // Save the current configuration to the JSON file
-    public void saveToJson() throws IOException {
+    public void SaveDataToJsonFile() throws IOException {
         Gson gson = new Gson();
         List<Configuration> configs = loadAllConfigurations();
 
@@ -43,25 +43,30 @@ public class Configuration {
     }
 
     // Load all configurations from the JSON file
+// Load all configurations from the JSON file
     public static List<Configuration> loadAllConfigurations() {
-        Gson gson = new Gson();
-        List<Configuration> configs = new ArrayList<>();
+        try {
+            File file = new File(CONFIG_FILE_PATH);
 
-        try (FileReader reader = new FileReader(CONFIG_FILE_PATH)) {
-            Type listType = new TypeToken<List<Configuration>>() {}.getType();
-            configs = gson.fromJson(reader, listType);
-
-            if (configs == null || configs.isEmpty()) { // Handle the case where the file is empty
-                configs = new ArrayList<>();
-                System.out.println(formatText("Warn: No configurations found in the file. Starting fresh.", "warn"));
-            } else {
-                System.out.println(formatText("Info: Loaded existing configurations successfully.", "success"));
+            // Create file if it doesn't exist
+            if (!file.exists()) {
+                file.createNewFile();
+                return new ArrayList<>(); // Return an empty list
             }
-        } catch (IOException e) {
-            System.out.println(formatText("Warn: Could not load configurations file. Starting fresh.", "warn"));
+
+            // Read configurations from the JSON file
+            try (FileReader reader = new FileReader(file)) {
+                Configuration[] configs = new Gson().fromJson(reader, Configuration[].class);
+                if (configs != null) {
+                    return new ArrayList<>(List.of(configs));
+                }
+            }
+
+        } catch (Exception e) {
+            Logger.error("Error loading configurations: " + e.getMessage());
         }
 
-        return configs;
+        return new ArrayList<>(); // Return an empty list if any errors occur
     }
 
     // Collect a new configuration from user input
@@ -69,12 +74,12 @@ public class Configuration {
         Configuration config = new Configuration();
 
         // Enter Event Name
-        System.out.println(formatText("===== Configuration Summary =====", "style"));
+        System.out.println(formatTextStyle("===== Configuration Summary =====", "style"));
         while (true) {
-            System.out.print(formatText(">> Enter Event Name: ", "bold"));
+            System.out.print(formatTextStyle(">> Enter Event Name: ", "bold"));
             config.eventName = scanner.nextLine();
             if (config.eventName.trim().isEmpty()) {
-                System.out.println(formatText("Error: Event Name cannot be empty.", "error"));
+                Logger.warn("Error: Event Name cannot be empty.");
             } else {
                 break;
             }
@@ -82,10 +87,10 @@ public class Configuration {
 
         // Enter Theater Name
         while (true) {
-            System.out.print(formatText(">> Enter Theater Name: ", "bold"));
+            System.out.print(formatTextStyle(">> Enter Theater Name: ", "bold"));
             config.theaterName = scanner.nextLine();
             if (config.theaterName.trim().isEmpty()) {
-                System.out.println(formatText("Error: Theater Name cannot be empty.", "error"));
+                Logger.warn("Error: Theater Name cannot be empty.");
             } else {
                 break;
             }
@@ -94,16 +99,16 @@ public class Configuration {
         // Enter Event Ticket Price
         while (true) {
             try {
-                System.out.print(formatText(">> Enter Event Ticket Price (greater than 0): ", "bold"));
+                System.out.print(formatTextStyle(">> Enter Event Ticket Price (greater than 0): ", "bold"));
                 config.ticketPrice = scanner.nextDouble();
                 if (config.ticketPrice <= 0) {
-                    System.out.println(formatText("Error: Ticket price must be a positive value.", "error"));
+                    Logger.warn("Error: Ticket price must be a positive value.");
                 } else {
-                    System.out.println(formatText("Success: Ticket price set successfully!", "success"));
+                    System.out.println(formatTextStyle("Success: Ticket price set successfully!","success"));
                     break;
                 }
             } catch (Exception e) {
-                System.out.println(formatText("Error: Invalid input. Please enter a valid number.", "error"));
+                Logger.error("Error: Invalid input. Please enter a valid number.");
                 scanner.nextLine(); // Clear the buffer
             }
         }
@@ -111,16 +116,16 @@ public class Configuration {
         // Enter Total Number of Tickets
         while (true) {
             try {
-                System.out.print(formatText(">> Enter Total Number of Tickets: ", "bold"));
+                System.out.print(formatTextStyle(">> Enter Total Number of Tickets: ", "bold"));
                 config.totalTickets = scanner.nextInt();
                 if (config.totalTickets <= 0) {
-                    System.out.println(formatText("Error: Total number of tickets must be greater than zero.", "error"));
+                    Logger.warn("Total number of tickets must be greater than zero.");
                 } else {
-                    System.out.println(formatText("Success: Total tickets set successfully!", "success"));
+                    System.out.println(formatTextStyle("Success: Total tickets set successfully!", "success"));
                     break;
                 }
             } catch (Exception e) {
-                System.out.println(formatText("Error: Invalid input for Total Number of Tickets. Please enter a valid number.", "error"));
+                Logger.warn(" Invalid input for Total Number of Tickets. Please enter a valid number.");
                 scanner.nextLine(); // Clear the buffer
             }
         }
@@ -128,16 +133,16 @@ public class Configuration {
         // Enter Ticket Release Rate
         while (true) {
             try {
-                System.out.print(formatText(">> Enter Ticket Release Rate (Enter seconds 1-10): ", "bold"));
+                System.out.print(formatTextStyle(">> Enter Ticket Release Rate (Enter seconds 1-10): ", "bold"));
                 config.ticketReleaseRate = scanner.nextInt();
                 if (config.ticketReleaseRate <= 0 || config.ticketReleaseRate > 10) {
-                    System.out.println(formatText("Error: Ticket release rate must be between 1 and 10 seconds.", "error"));
+                    Logger.warn("Warn: Ticket release rate must be between 1 and 10 seconds.");
                 } else {
-                    System.out.println(formatText("Success: Ticket release rate set successfully!", "success"));
+                    System.out.println(formatTextStyle("Success: Ticket release rate set successfully!", "success"));
                     break;
                 }
             } catch (Exception e) {
-                System.out.println(formatText("Error: Invalid input for Ticket Release Rate. Please enter a valid number.", "error"));
+                Logger.error("Error: Invalid input for Ticket Release Rate. Please enter a valid number.");
                 scanner.nextLine(); // Clear the buffer
             }
         }
@@ -145,16 +150,16 @@ public class Configuration {
         // Enter Customer Retrieval Rate
         while (true) {
             try {
-                System.out.print(formatText(">> Enter Customer Retrieval Rate (1-10 seconds): ", "bold"));
+                System.out.print(formatTextStyle(">> Enter Customer Retrieval Rate (1-10 seconds): ", "bold"));
                 config.customerRetrievalRate = scanner.nextInt();
                 if (config.customerRetrievalRate < 1 || config.customerRetrievalRate > 10) {
-                    System.out.println(formatText("Error: Rate must be between 1 and 10 seconds.", "error"));
+                    Logger.error("Error: Rate must be between 1 and 10 seconds.");
                 } else {
-                    System.out.println(formatText("Success: Customer Retrieval Rate set successfully!", "success"));
+                    System.out.println(formatTextStyle("Success: Customer Retrieval Rate set successfully!", "success"));
                     break;
                 }
             } catch (Exception e) {
-                System.out.println(formatText("Error: Invalid input for Customer Retrieval Rate. Please enter a valid number.", "error"));
+                Logger.error("Error: Invalid input for Customer Retrieval Rate. Please enter a valid number.");
                 scanner.nextLine(); // Clear the buffer
             }
         }
@@ -162,18 +167,18 @@ public class Configuration {
         // Enter Maximum Ticket Capacity
         while (true) {
             try {
-                System.out.print(formatText(">> Enter Maximum Ticket Capacity of the Pool (cannot be greater than Total Tickets): ", "bold"));
+                System.out.print(formatTextStyle(">> Enter Maximum Ticket Capacity of the Pool (cannot be greater than Total Tickets): ", "bold"));
                 config.maximumTicketCapacity = scanner.nextInt();
                 if (config.maximumTicketCapacity <= 0) {
-                    System.out.println(formatText("Error: Maximum Ticket Capacity must be greater than zero.", "error"));
+                    Logger.warn("warn: Maximum Ticket Capacity must be greater than zero.");
                 } else if (config.maximumTicketCapacity > config.totalTickets) {
-                    System.out.println(formatText("Warn: Maximum Ticket Capacity cannot be greater than Total Tickets.", "warn"));
+                    Logger.warn("Warn: Maximum Ticket Capacity cannot be greater than Total Tickets.");
                 } else {
-                    System.out.println(formatText("Success: Maximum Ticket Capacity set successfully!", "success"));
+                    System.out.println(formatTextStyle("Success: Maximum Ticket Capacity set successfully!", "success"));
                     break;
                 }
             } catch (Exception e) {
-                System.out.println(formatText("Error: Invalid input for Maximum Ticket Capacity. Please enter a valid number.", "error"));
+                Logger.error("Error: Invalid input for Maximum Ticket Capacity. Please enter a valid number.");
                 scanner.nextLine(); // Clear the buffer
             }
         }
@@ -195,18 +200,18 @@ public class Configuration {
                     return input;  // Return the valid input
                 } else {
                     // Warn user if input is invalid
-                    System.out.println(formatText("Invalid input. Please enter 'yes' or 'no'.", "warn"));
+                    Logger.warn("Invalid input. Please enter 'yes' or 'no'.");
                 }
             } catch (Exception e) {
                 // Catch any unexpected exceptions and show an error message
-                System.out.println(formatText("An unexpected error occurred while reading input: " + e.getMessage(), "warn"));
+                Logger.error("An unexpected error occurred while reading input: " + e.getMessage());
             }
         }
     }
 
 
     // Format text with styles (bold, italic, error, success, etc.)
-    private static String formatText(String text, String style) {
+    private static String formatTextStyle(String text, String style) {
         String reset = "\u001B[0m";
         String color = "";
         switch (style.toLowerCase()) {
@@ -216,17 +221,11 @@ public class Configuration {
             case "italic":
                 color = "\u001B[3m";
                 break;
-            case "error":
-                color = "\u001B[31m"; // Red for errors
-                break;
             case "success":
                 color = "\u001B[32m"; // Green for success
                 break;
             case "style":
                 color = "\u001B[46m\u001B[35m"; // Cyan background with Magenta text
-                break;
-            case "warn":
-                color = "\u001B[33m"; // Yellow for warnings
                 break;
             default:
                 color = "";
@@ -255,14 +254,6 @@ public class Configuration {
         return ticketReleaseRate;
     }
 
-    public int getVendorCount() {
-        return vendorCount;
-    }
-
-    public int getCustomerCount() {
-        return customerCount;
-    }
-
     public int getCustomerRetrievalRate() {
         return customerRetrievalRate;
     }
@@ -278,4 +269,13 @@ public class Configuration {
     public void setTheaterID(int theaterID) {
         this.theaterID = theaterID;
     }
+
+    public int getVendorCount() {
+        return VendorCount;
+    }
+
+    public int getCustomerCount() {
+        return CustomerCount;
+    }
 }
+

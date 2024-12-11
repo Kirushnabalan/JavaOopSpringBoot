@@ -10,7 +10,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.google.gson.reflect.TypeToken;
 
 public class Logger {
     private static final DateTimeFormatter DATE_TIME_FORMATTER =

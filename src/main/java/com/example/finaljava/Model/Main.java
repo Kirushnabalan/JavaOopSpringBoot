@@ -163,7 +163,7 @@ public class Main {
 
     private static void saveConfiguration(Configuration config) {
         try {
-            config.saveToJson(); // Save the configuration to a file
+            config.SaveDataToJsonFile(); // Save the configuration to a file
             Logger.info("Configuration saved to file: " + SetFilePath);
             System.out.println("Configuration saved successfully.");
             handleStartRestartOrExit(new Scanner(System.in)); // Ask the user what to do next

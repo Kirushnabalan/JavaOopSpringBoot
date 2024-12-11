@@ -2,11 +2,13 @@ package com.example.finaljava.Controller;
 
 import com.example.finaljava.Model.Configuration;
 import com.example.finaljava.Service.SimulationService;
+import com.google.gson.JsonObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/simulation")
@@ -37,17 +39,16 @@ public class Controller {
         return "Simulation stopped!";
     }
 
-    // End the simulation (same as stopping it in this case)
-    @PostMapping("/end")
-    public String endSimulation() {
-        simulationService.stopSimulation();  // Reuse stopSimulation for ending
-        return "Simulation ended and resources cleaned!";
-    }
 
     // Fetch all configurations saved in the system
     @GetMapping("/show")
     public List<Configuration> getAllConfigs() {
         return simulationService.loadAllConfigurations();  // Fetch configurations from JSON file
+    }
+
+    @GetMapping("/logs")
+    public List<Map<String, Object>> getLogs() {
+        return simulationService.getLogs();
     }
 
 }
