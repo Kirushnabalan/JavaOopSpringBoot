@@ -1,7 +1,6 @@
 package com.example.finaljava.Model;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.File;
 import java.io.FileReader;
@@ -17,8 +16,8 @@ public class Configuration {
     private int theaterID; // Auto-incrementing Theater ID
     private int totalTickets;
     private int ticketReleaseRate;
-    private int VendorCount;
-    private int CustomerCount;
+    private int VendorCount=20;
+    private int CustomerCount=20;
     private int customerRetrievalRate;
     private int maximumTicketCapacity;
     private Double ticketPrice;
@@ -76,7 +75,7 @@ public class Configuration {
         // Enter Event Name
         System.out.println(formatTextStyle("===== Configuration Summary =====", "style"));
         while (true) {
-            System.out.print(formatTextStyle(">> Enter Event Name: ", "bold"));
+            System.out.println(formatTextStyle(">> Enter Event Name: ", "bold"));
             config.eventName = scanner.nextLine();
             if (config.eventName.trim().isEmpty()) {
                 Logger.warn("Error: Event Name cannot be empty.");
@@ -87,7 +86,7 @@ public class Configuration {
 
         // Enter Theater Name
         while (true) {
-            System.out.print(formatTextStyle(">> Enter Theater Name: ", "bold"));
+            System.out.println(formatTextStyle(">> Enter Theater Name: ", "bold"));
             config.theaterName = scanner.nextLine();
             if (config.theaterName.trim().isEmpty()) {
                 Logger.warn("Error: Theater Name cannot be empty.");
@@ -99,7 +98,7 @@ public class Configuration {
         // Enter Event Ticket Price
         while (true) {
             try {
-                System.out.print(formatTextStyle(">> Enter Event Ticket Price (greater than 0): ", "bold"));
+                System.out.println(formatTextStyle(">> Enter Event Ticket Price (greater than 0): ", "bold"));
                 config.ticketPrice = scanner.nextDouble();
                 if (config.ticketPrice <= 0) {
                     Logger.warn("Error: Ticket price must be a positive value.");
@@ -116,7 +115,7 @@ public class Configuration {
         // Enter Total Number of Tickets
         while (true) {
             try {
-                System.out.print(formatTextStyle(">> Enter Total Number of Tickets: ", "bold"));
+                System.out.println(formatTextStyle(">> Enter Total Number of Tickets: ", "bold"));
                 config.totalTickets = scanner.nextInt();
                 if (config.totalTickets <= 0) {
                     Logger.warn("Total number of tickets must be greater than zero.");
@@ -125,7 +124,7 @@ public class Configuration {
                     break;
                 }
             } catch (Exception e) {
-                Logger.warn(" Invalid input for Total Number of Tickets. Please enter a valid number.");
+                Logger.error(" Invalid input for Total Number of Tickets. Please enter a valid number.");
                 scanner.nextLine(); // Clear the buffer
             }
         }
@@ -133,7 +132,7 @@ public class Configuration {
         // Enter Ticket Release Rate
         while (true) {
             try {
-                System.out.print(formatTextStyle(">> Enter Ticket Release Rate (Enter seconds 1-10): ", "bold"));
+                System.out.println(formatTextStyle(">> Enter Ticket Release Rate (Enter seconds 1-10): ", "bold"));
                 config.ticketReleaseRate = scanner.nextInt();
                 if (config.ticketReleaseRate <= 0 || config.ticketReleaseRate > 10) {
                     Logger.warn("Warn: Ticket release rate must be between 1 and 10 seconds.");
@@ -150,10 +149,10 @@ public class Configuration {
         // Enter Customer Retrieval Rate
         while (true) {
             try {
-                System.out.print(formatTextStyle(">> Enter Customer Retrieval Rate (1-10 seconds): ", "bold"));
+                System.out.println(formatTextStyle(">> Enter Customer Retrieval Rate (1-10 seconds): ", "bold"));
                 config.customerRetrievalRate = scanner.nextInt();
                 if (config.customerRetrievalRate < 1 || config.customerRetrievalRate > 10) {
-                    Logger.error("Error: Rate must be between 1 and 10 seconds.");
+                    Logger.warn("Warn Rate must be between 1 and 10 seconds.");
                 } else {
                     System.out.println(formatTextStyle("Success: Customer Retrieval Rate set successfully!", "success"));
                     break;
@@ -167,7 +166,7 @@ public class Configuration {
         // Enter Maximum Ticket Capacity
         while (true) {
             try {
-                System.out.print(formatTextStyle(">> Enter Maximum Ticket Capacity of the Pool (cannot be greater than Total Tickets): ", "bold"));
+                System.out.println(formatTextStyle(">> Enter Maximum Ticket Capacity of the Pool (cannot be greater than Total Tickets): ", "bold"));
                 config.maximumTicketCapacity = scanner.nextInt();
                 if (config.maximumTicketCapacity <= 0) {
                     Logger.warn("warn: Maximum Ticket Capacity must be greater than zero.");
@@ -225,7 +224,7 @@ public class Configuration {
                 color = "\u001B[32m"; // Green for success
                 break;
             case "style":
-                color = "\u001B[46m\u001B[35m"; // Cyan background with Magenta text
+                color ="\u001B[35m";
                 break;
             default:
                 color = "";
@@ -278,4 +277,3 @@ public class Configuration {
         return CustomerCount;
     }
 }
-

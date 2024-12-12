@@ -1,6 +1,5 @@
 package com.example.finaljava.Model;
 
-import java.math.BigDecimal;
 
 public class Vendor implements Runnable {
 

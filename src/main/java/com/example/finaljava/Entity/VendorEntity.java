@@ -6,20 +6,20 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-import java.math.BigDecimal;
 
 @Entity
 @Table(name = "Vendor") // Table name in the database
 public class VendorEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-generate primary key
+    // Auto-generate primary key
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;          // Vendor name
-    private String theaterName;   // Theater name
-    private String eventName;     // Event name
-    private Double ticketPrice; // Ticket price
+    private String name;
+    private String theaterName;
+    private String eventName;
+    private Double ticketPrice;
 
     // Constructor with all fields
     public VendorEntity(String name, String theaterName, String eventName, Double ticketPrice) {
